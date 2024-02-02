@@ -125,6 +125,18 @@ class StuffCommonListTest {
         name.setCurrentName("毛巾");
         assertEquals(null, name.getCurrentName());
     }
+    @Test
+
+    public void shouldGetCurrentNameOnlySurname() {
+        name.setCurrentName("Иванова");
+        assertEquals("Иванова", name.getCurrentName());
+    }
+    @Test
+
+    public void shouldGetCurrentNameOnlyName() {
+        name.setCurrentName("Елена");
+        assertEquals("Елена", name.getCurrentName());
+    }
 }
 
 
