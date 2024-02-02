@@ -9,16 +9,12 @@ public class StuffCommonListService {
 
     }
 
-    public String getCurrentName() {
-        return currentName;
-    }
-
 
     public void setCurrentName(String currentName) {
         this.currentName = currentName;
     }
 
-    public String getCurrentNameWithMinSymbol() {
+    public String getCurrentNameWithMinSymbolCorrectAuto() {
         return currentName;
     }
 
