@@ -46,8 +46,13 @@ class StuffCommonListTest {
     }
 
     @Test
-    public void shouldGetCurrentName() {
+    public void shouldGetCurrentNameWithСapitalLetterAtTheEnd() {
         name.setCurrentName("Иванов ИваН Иванович");
+        assertEquals("Иванов Иван Иванович", name.getCurrentName());
+    }
+    @Test
+    public void shouldGetCurrentName() {
+        name.setCurrentName("Иванов Иван Иванович");
         assertEquals("Иванов Иван Иванович", name.getCurrentName());
     }
 
