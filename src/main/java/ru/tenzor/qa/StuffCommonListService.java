@@ -10,15 +10,11 @@ public class StuffCommonListService {
     }
 
 
-    public void setCurrentName(String currentName) {
-        this.currentName = currentName;
-    }
-
     public String getCurrentNameWithMinSymbolCorrectAuto() {
         return currentName;
     }
 
-    public void setCurrentNameWithMinSymbol(String currentName) {
+    public void setCurrentNameWithMinSymbolCorrectAuto(String currentName) {
 
         int nameWithMinSymbol = 2;
         if (currentName.length() <= nameWithMinSymbol) {

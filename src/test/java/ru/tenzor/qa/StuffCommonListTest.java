@@ -9,8 +9,8 @@ class StuffCommonListTest {
 
     @Test
     public void shouldGetCurrentNameBeforeAuto() {
-        name.setCurrentNameWithMinSymbol("И");
-        name.setCurrentNameWithMinSymbol("Ив");
+        name.setCurrentNameWithMinSymbolCorrectAuto("И");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Ив");
 
 
         assertEquals(null, name.getCurrentNameWithMinSymbolCorrectAuto());
@@ -19,7 +19,7 @@ class StuffCommonListTest {
 
     @Test
     public void shouldGetCurrentNameAfterAuto() {
-        name.setCurrentNameWithMinSymbol("Ива");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Ива");
 
 
         assertEquals("Ива", name.getCurrentNameWithMinSymbolCorrectAuto());
@@ -27,7 +27,7 @@ class StuffCommonListTest {
     }
     @Test
     public void shouldGetCurrentNameAfterAuto4Symbol() {
-        name.setCurrentNameWithMinSymbol("Иван");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Иван");
 
 
         assertEquals("Иван", name.getCurrentNameWithMinSymbolCorrectAuto());
@@ -36,63 +36,63 @@ class StuffCommonListTest {
 
     @Test
     public void shouldGetCurrentNameEnglishSymbol() {
-        name.setCurrentName("Ivanov Petr Sidorovich");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Ivanov Petr Sidorovich");
         assertEquals("Ivanov Petr Sidorovich", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
 
     @Test
     public void shouldGetCurrentNameWithNumbers() {
-        name.setCurrentName("123456 45 58");
+        name.setCurrentNameWithMinSymbolCorrectAuto("123456 45 58");
         assertEquals("123456 45 58", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
     public void shouldGetCurrentNameWithNumbersAndEnglishSymbol() {
-        name.setCurrentName("1234 4667 Erihrid");
+        name.setCurrentNameWithMinSymbolCorrectAuto("1234 4667 Erihrid");
         assertEquals("1234 4667 Erihrid", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
     public void shouldGetCurrentNameWithСapitalLetterAtTheEnd() {
-        name.setCurrentName("Иванов ИваН Иванович");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Иванов ИваН Иванович");
         assertEquals("Иванов Иван Иванович", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
     public void shouldGetCurrentName() {
-        name.setCurrentName("Иванов Иван Иванович");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Иванов Иван Иванович");
         assertEquals("Иванов Иван Иванович", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
     public void shouldGetCurrentNameWithSymbolAmongNameOne() {
-        name.setCurrentName("Ива-нов Иван Ильвирович");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Ива-нов Иван Ильвирович");
         assertEquals(null, name.getCurrentNameWithMinSymbolCorrectAuto());
 
     }
 
     @Test
     public void shouldGetCurrentNameWithDoubleNameEnglish() {
-        name.setCurrentName("Ivanov-Sidorov Ivan Sergeevich");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Ivanov-Sidorov Ivan Sergeevich");
         assertEquals("Ivanov-Sidorov Ivan Sergeevich", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
     public void shouldGetCurrentNameWithDoubleName() {
-        name.setCurrentName("Иванов Иван-Петр Иванович");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Иванов Иван-Петр Иванович");
         assertEquals("Иванов Иван-Петр Иванович", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
     public void shouldGetCurrentNameWithDoubleSurname() {
-        name.setCurrentName("Иванов-Смирнов Иван Иванович");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Иванов-Смирнов Иван Иванович");
         assertEquals("Иванов-Смирнов Иван Иванович", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
     public void shouldGetCurrentNameWithDoubleSurnameWithoutDash() {
-        name.setCurrentName("Иванов Смирнов Иван Иванович");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Иванов Смирнов Иван Иванович");
         assertEquals("Иванов Смирнов Иван Иванович", name.getCurrentNameWithMinSymbolCorrectAuto());
 
 
@@ -100,7 +100,7 @@ class StuffCommonListTest {
 
     @Test
     public void shouldGetCurrentNameWithDoubleNameWithoutDash() {
-        name.setCurrentName("Балашова Татьяна Елена Евгеньевна");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Балашова Татьяна Елена Евгеньевна");
         assertEquals("Балашова Татьяна Елена Евгеньевна", name.getCurrentNameWithMinSymbolCorrectAuto());
 
 
@@ -108,7 +108,7 @@ class StuffCommonListTest {
 
     @Test
     public void shouldGetCurrentNameWithSpaceBeggin() {
-        name.setCurrentName(" Балашова Татьяна Елена Евгеньевна");
+        name.setCurrentNameWithMinSymbolCorrectAuto(" Балашова Татьяна Елена Евгеньевна");
         assertEquals("Балашова Татьяна Елена Евгеньевна", name.getCurrentNameWithMinSymbolCorrectAuto());
 
 
@@ -116,33 +116,33 @@ class StuffCommonListTest {
 
     @Test
     public void shouldGetCurrentNameWithSpecialSymbol() {
-        name.setCurrentName("??????");
+        name.setCurrentNameWithMinSymbolCorrectAuto("??????");
         assertEquals(null, name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
 
     public void shouldGetCurrentNameWithEmoji() {
-        name.setCurrentName("U+D83D");
+        name.setCurrentNameWithMinSymbolCorrectAuto("U+D83D");
         assertEquals(null, name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 
     @Test
 
     public void shouldGetCurrentNameWithHieroglyph() {
-        name.setCurrentName("毛巾");
+        name.setCurrentNameWithMinSymbolCorrectAuto("毛巾巾");
         assertEquals(null, name.getCurrentNameWithMinSymbolCorrectAuto());
     }
     @Test
 
     public void shouldGetCurrentNameOnlySurname() {
-        name.setCurrentName("Иванова");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Иванова");
         assertEquals("Иванова", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
     @Test
 
     public void shouldGetCurrentNameOnlyName() {
-        name.setCurrentName("Елена");
+        name.setCurrentNameWithMinSymbolCorrectAuto("Елена");
         assertEquals("Елена", name.getCurrentNameWithMinSymbolCorrectAuto());
     }
 }
