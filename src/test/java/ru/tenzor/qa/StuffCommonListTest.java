@@ -50,6 +50,7 @@ class StuffCommonListTest {
         name.setCurrentName("Иванов ИваН Иванович");
         assertEquals("Иванов Иван Иванович", name.getCurrentName());
     }
+
     @Test
     public void shouldGetCurrentName() {
         name.setCurrentName("Иванов Иван Иванович");
@@ -115,6 +116,13 @@ class StuffCommonListTest {
 
     public void shouldGetCurrentNameWithEmoji() {
         name.setCurrentName("U+D83D");
+        assertEquals(null, name.getCurrentName());
+    }
+
+    @Test
+
+    public void shouldGetCurrentNameWithHieroglyph() {
+        name.setCurrentName("毛巾");
         assertEquals(null, name.getCurrentName());
     }
 }
